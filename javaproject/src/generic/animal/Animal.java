@@ -24,6 +24,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal [name=" + name + ", size=" + size + "]";
+        return "Animal [name=" + name + ", size=" + size + "]" + "test";
     }
 }
