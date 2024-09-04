@@ -22,6 +22,8 @@ public class NetworkClientV2 {
     public void send(String data) throws NetworkClientExceptionV2 {
         if(sendError) {
             throw new NetworkClientExceptionV2("sendError", address + "서버에 데이터 전송 실패: " +data);// 오류가 발생하면, 예외 객체를 만들고 거기에 오류 코드와 오류 메시지를 담아둔다. 만든 객체를 thorw를 통해 던짐
+            //throw new RuntimeException("ex");   //런타임 예외 객체 생성해서 던짐
+            //이렇게 하면 catch에서 error1인 NetworkClientExceptionV2는 잡을 수 있지만 새로 등장한 error2인 RuntimeException은 잡을 수 없다.
         }
         //전송 성공
         System.out.println(address + " 서버에 데이터 전송: " + data);
